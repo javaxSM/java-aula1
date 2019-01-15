@@ -1,0 +1,22 @@
+package course;
+
+public class exception {
+
+	public static void main(String[] args) {
+		
+		
+			int x = 20;
+			
+			try {
+				double cal = x/0;
+			}catch(ArithmeticException e) {
+				System.out.println("Erroa ao calcular!);
+			}
+			double cal = 20/0;
+			System.out.println(cal);
+		
+		
+		
+		
+	}
+}

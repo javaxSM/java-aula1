@@ -1,0 +1,50 @@
+package course;
+
+import java.util.Scanner;
+
+public class matrizes {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		
+		int n = sc.nextInt();
+		int[][] mat = new int [n][n]; // Instanciando MATRIZES.
+		
+		for(int i=0; i<n; i++) { // Para percorrer linhas.
+			for(int j=0; j<n; j++) { // Para percorrer colunas.
+				mat[i][j] = sc.nextInt();
+			}
+		}
+		
+		System.out.println("Main diagonal: ");
+		// Buscando diagonal principal
+		for(int i=0; i<n; i++) {
+			System.out.print(mat[i][i] + " ");
+		}
+		
+		System.out.println("--------------");
+		
+		//Busca numeros negativos (i = LINHAS, J = COLUNAS).
+		
+		
+		int count = 0;
+		
+		for(int i=0; i<n; i++) {
+			for(int j=0; j<n; j++) {
+				if(mat[i][j] < 0) {
+					count++;
+				}
+			}
+		}
+		
+		System.out.println("Negative numbers: " + count);
+		
+		System.out.println("------------------------");
+		
+		
+		
+		sc.close();
+
+	}
+
+}

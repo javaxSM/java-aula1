@@ -1,0 +1,16 @@
+package course;
+
+public class exception {
+
+	public static void main(String[] args) {
+		
+		
+			int x = 20;
+			double cal = 20/0;
+			System.out.println(cal);
+		
+		
+		
+		
+	}
+}

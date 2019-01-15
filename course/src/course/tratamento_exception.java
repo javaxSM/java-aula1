@@ -1,0 +1,20 @@
+package course;
+
+public class tratamento_exception {
+
+	public static void main(String[] args) {
+		
+		
+			int x = 20;
+			
+			try {
+				double cal = x/0;
+			}catch(ArithmeticException e) {
+				System.out.println("Erro ao calcular!");
+			}
+		
+		
+		
+		
+	}
+}
