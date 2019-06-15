@@ -1,0 +1,76 @@
+﻿@model UsuarioModel
+
+@{
+    ViewData["Title"] = "Menu";
+}
+
+
+
+<div class="row">
+    <div class="col-lg-4 text-center">
+        <a href="../Conta/Index">
+            <img src="~/Imagens/conta.png" class="imagemGeral" />
+            <h3>
+                <label>Criar Conta</label>
+            </h3>
+        </a>
+    </div>
+
+
+    <div class="col-lg-4 text-center">
+        <a href="../PlanoConta/Index">
+            <img src="~/Imagens/planocontas.png" class="imagemGeral" />
+            <h3>
+                <label>Plano de Contas</label>
+            </h3>
+        </a>
+    </div>
+
+    <div class="col-lg-4 text-center">
+        <a href="../Transacao/Index">
+            <img src="~/Imagens/registrar_transacao.png" class="imagemGeral" />
+            <h3>
+                <label>Registrar Transação</label>
+            </h3>
+        </a>
+    </div>
+</div>
+
+<br /><br />
+
+<div class="row">
+    <div class="col-lg-4 text-center">
+        <a href="../Transacao/Extrato">
+            <img src="~/Imagens/extrato.png" class="imagemGeral" />
+            <h3>
+                <label>Extrato</label>
+            </h3>
+        </a>
+    </div>
+
+
+    <div class="col-lg-4 text-center">
+        <a href="../Transacao/DashBoard">
+            <img src="~/Imagens/dashboard.png" class="imagemGeral" />
+            <h3>
+                <label>DashBoard</label>
+            </h3>
+        </a>
+    </div>
+
+
+    <div class="col-lg-4 text-center">
+        <img src="~/Imagens/ajuda.png" class="imagemGeral" />
+        <h3>
+            <label>Ajuda</label>
+        </h3>
+    </div>
+
+</div>
+
+
+<style>
+    .imagemGeral {
+        width: 50%;
+    }
+</style>

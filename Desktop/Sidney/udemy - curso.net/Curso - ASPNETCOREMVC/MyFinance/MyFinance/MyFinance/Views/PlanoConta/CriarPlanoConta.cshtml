@@ -1,0 +1,52 @@
+﻿@model PlanoContasModel
+
+@{
+    ViewData["Title"] = "CriarPlanoConta";
+}
+
+<h2>Criar Plano de Contas</h2> <br />
+
+@{ 
+    var vDescricao = "";
+    var vTipo = "";
+    var vId = 0;
+
+    try
+    {
+        vId = int.Parse(@ViewBag.Registro.Id.ToString());
+        vDescricao = @ViewBag.Registro.Descricao.ToString();
+        vTipo = @ViewBag.Registro.tipo.ToString();
+    }
+    catch { }
+
+    }
+
+
+<form asp-controller="Conta" asp-action="CriarPlanoConta">
+    <input type="hidden" asp-for="Id" value="@vId" />
+
+    <div class="form-group">
+        <label>Descrição:</label>
+        <input type="text" class="form-control" asp-for="Descricao" value="@vDescricao">
+        <span asp-validation-for="Descricao"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="name">Tipo:</label>
+        @{
+            if (vTipo == "R")
+            {
+                <div class="radio"><label><input type="radio" class="form-control" asp-for="tipo" value="R" checked>Receita</label></div>
+                <div class="custom-radio"><label><input type="radio" class="form-control" asp-for="tipo" value="D" unchecked>Despesa</label></div>
+            }
+            else
+            {
+                <div class="radio"><label><input type="radio" class="form-control" asp-for="tipo" value="R" unchecked>Receita</label></div>
+                <div class="custom-radio"><label><input type="radio" class="form-control" asp-for="tipo" value="D" checked>Despesa</label></div>
+            }
+        }
+
+    </div>
+
+    <button type="submit" class="btn btn-success">Registrar</button>
+</form>

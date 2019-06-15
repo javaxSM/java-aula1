@@ -1,0 +1,91 @@
+﻿@model UsuarioModel
+
+@{
+    try
+    {
+        if (TempData["MensagemLoginInvalido"].ToString() != null)
+        {
+            <div class="alert alert-danger" role="alert">
+                <strong>Atenção!</strong> @TempData["MensagemLoginInvalido"]
+            </div>
+        }
+
+    }
+
+    catch { }
+
+
+    <h1>Login</h1>
+}
+
+
+<form asp-controller="Usuario" asp-action="ValidarLogin">
+    <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" asp-for="Email" placeholder="Entre com seu email">
+    </div>
+    <div class="form-group">
+        <label for="password">Senha:</label>
+        <input type="password" class="form-control" asp-for="Senha" placeholder="Entre com sua senha">
+    </div>
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Lembre-me</label>
+    </div><br />
+    <button type="submit" class="btn btn-primary">Entrar</button>
+</form>
+
+
+
+@*<link rel="stylesheet" href="~/lib/bootstrap/dist/css/style_login.css" /> Inclusão da chamada do CSS*@
+
+
+
+
+@*<div class="container login-container">
+        <div class="row">
+            <div class="col-md-6 login-form-1">
+                <h3>Login</h3>
+
+                <form asp-controller="Usuario" asp-action="ValidarLogin">
+                    <div class="form-group">
+                        <input type="text" class="form-control" asp-for="Email" placeholder="Seu Email *" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" asp-for="Senha" placeholder="Sua Senha *" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btnSubmit" value="Login" />
+                    </div>
+                    <div class="form-group">
+                        <a href="#" class="ForgetPwd">Esqueceu a senha?</a>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6 login-form-2">
+                <h3>Cadastre-se</h3>
+                <form asp-controller="Usuario" asp-action="Registrar">
+                    <div class="form-group">
+                        <input type="text" class="form-control" asp-for="Nome" placeholder="Nome *" required/>
+                        <span asp-validation-for="Nome"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" asp-for="Email" placeholder="Seu Email *" required/>
+                        <span asp-validation-for="Email"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" asp-for="Senha" placeholder="Sua Senha *" required/>
+                        <span asp-validation-for="Senha"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" class="form-control" asp-for="Data_Nascimento" placeholder="Data Nascimento *" required/>
+                        <span asp-validation-for="Data_Nascimento"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btnSubmit" value="Cadastrar" />
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>*@
