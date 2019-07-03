@@ -43,7 +43,7 @@ namespace MyFinance.Controllers
         }
 
 
-        [HttpPost] // Recebe apenas requisições via POST (Apenas envio de informações.)
+        [HttpPost] 
         public IActionResult Registrar(UsuarioModel usuario)
         {
             if (ModelState.IsValid)

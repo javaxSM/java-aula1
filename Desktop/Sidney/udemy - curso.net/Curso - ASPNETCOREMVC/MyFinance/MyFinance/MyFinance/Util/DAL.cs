@@ -11,7 +11,7 @@ namespace MyFinance.Util
         private static string database = "financeiro";
         private static string user = "root";
         private static string password = "root";
-        private string connectionString = $"server={server};Database={database};Uid={user};Password={password}"; // Interpolação string
+        private string connectionString = $"server={server};Database={database};user={user};Password={password}"; // Interpolação string
         private MySqlConnection connection;
         
         public DAL()
@@ -19,6 +19,7 @@ namespace MyFinance.Util
             connection = new MySqlConnection(connectionString);
             connection.Open();
         }
+
 
         //Executa SELECT's
         public DataTable RetDataTable(string sql)

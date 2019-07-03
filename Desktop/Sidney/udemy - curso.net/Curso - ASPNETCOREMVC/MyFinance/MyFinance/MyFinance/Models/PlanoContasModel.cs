@@ -90,7 +90,5 @@ namespace MyFinance.Models
         {
             new DAL().ExecutaComandoSQL("DELETE FROM PLANO_CONTAS WHERE ID = " + id_conta);
         }
-
-      
     }
 }

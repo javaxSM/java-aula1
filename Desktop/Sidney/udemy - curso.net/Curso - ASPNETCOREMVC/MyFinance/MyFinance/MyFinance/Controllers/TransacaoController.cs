@@ -11,12 +11,10 @@ namespace MyFinance.Controllers
             return View();
         }
 
-
         public IActionResult Extrato() // Obriga a tratar devido a CADA referência da "TRANSAÇÃO"- VIEW
         { 
             return View();
         }
-
 
         public IActionResult DashBoard()
         {

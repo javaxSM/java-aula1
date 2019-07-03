@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using MyFinance.Util;
-using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace MyFinance.Models
 {
@@ -26,7 +23,7 @@ namespace MyFinance.Models
 
         }
 
-        //Recebe o contexto para acesso ás variáveis de sessão.
+        //Recebe o contexto para acesso ás variáveis de sessão (Injeção de dependencia).
         public ContaModel(IHttpContextAccessor httpContextAccessor)
         {
             HttpContextAccessor = httpContextAccessor;
@@ -43,7 +40,6 @@ namespace MyFinance.Models
             string sql = $"SELECT ID, NOMECONTA, SALDO, USUARIO_ID FROM CONTA WHERE Usuario_Id = {IdUsuarioLogado}";
             DAL objDAL = new DAL();
             DataTable dt = objDAL.RetDataTable(sql);
-
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {

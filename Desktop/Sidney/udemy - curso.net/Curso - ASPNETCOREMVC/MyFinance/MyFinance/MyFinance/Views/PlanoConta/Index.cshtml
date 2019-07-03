@@ -8,44 +8,42 @@
 <button type="button" class="btn btn-primary" onclick="CriarPlanoConta()">Criar Conta</button> <br /><br />
 
 <div class="table-responsive-lg">
-<table class="table table-bordered">
+
+    <table class="table table-bordered">
 
 
-    <thead>
-        <tr>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descrição</th>
+                <th>Tipo</th>
+                <th scope="col">Ações</th>
+            </tr>
+        </thead>
 
-            <th>ID</th>
-            <th>Descrição</th>
-            <th>Tipo</th>
-            <th scope="col">Ações</th>
-        </tr>
-    </thead>
-
-
-    @{
+        @{
 
 
-        foreach (var item in (List<PlanoContasModel>)ViewBag.ListaPlano)
-        {
+            foreach (var item in (List<PlanoContasModel>)ViewBag.ListaPlano)
+            {
+                <tbody>
+                    <tr>
+                        <td>@item.Id.ToString()</td>
+                        <td>@item.Descricao.ToString()</td>
+                        <td>@item.tipo.ToString().Replace("R", "Receita").Replace("D", "Despesa")</td>
+                        <td>
+                            <button type="button" class="btn btn-primary" onclick="Editar(@item.Id.ToString())">Editar</button>
+                            <button type="button" class="btn btn-danger" onclick="Excluir(@item.Id.ToString())">Excluir</button>
 
-        
-            <tbody>
-                <tr>
-                    <td>@item.Id.ToString()</td>
-                    <td>@item.Descricao.ToString()</td>
-                    <td>@item.tipo.ToString().Replace("R", "Receita").Replace("D", "Despesa")</td>
-                    <td >
-                        <button type="button" class="btn btn-primary" onclick="Editar(@item.Id.ToString())">Editar</button>
-                        <button type="button" class="btn btn-danger" onclick="Excluir(@item.Id.ToString())">Excluir</button>
-                    </td>
-                </tr>
-            </tbody>
-        
+                        </td>
+                    </tr>
+                </tbody>
+
+            }
         }
 
-    }
-
-</table>
+    </table>
+</div>
 
 
 <script>
@@ -66,6 +64,5 @@
         window.location.href = "../PlanoConta/CriarPlanoConta/" + id_conta;
 
     }
-
 
 </script>
